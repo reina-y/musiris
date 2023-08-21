@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Musiris</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h2>Scores</h2>
+        <div class='posts'>
+                @foreach ($posts as $post)
+                <div class='post'>
+                    <h3>{{ $post->title }}</h2>
+                    <p>{{ $post->user->name }}</p>
+                    <p>(楽譜)post->image->image_url</p>
+                    <p>{{ $post->instruments }}</p>
+                    <p>{{ $post->body }}</p>
+                </div>
+                @endforeach
+        </div>
+    </body>
+</html>
