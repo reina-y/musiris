@@ -7,9 +7,10 @@
         <title>Musiris</title>
     </head>
     <body>
-        <h1 class="title">
-            {{ $post->title }}
-        </h1>
+        <x-app-layout>
+            <x-slot name="header">
+                {{ $post->title }}
+            </x-slot>
         <div class="content">
             <div class="content__post">
                 <p>楽譜</p>
@@ -21,4 +22,5 @@
             <a href="/">戻る</a>
         </div>
     </body>
+    </x-app-layout>
 </html>    

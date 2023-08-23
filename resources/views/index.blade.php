@@ -8,7 +8,10 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <h2>Scores</h2>
+    <x-app-layout>
+        <x-slot name="header">
+            Scores
+        </x-slot>   
         <div class='posts'>
                 @foreach ($posts as $post)
                 <div class='post'>
@@ -22,5 +25,6 @@
                 </div>
                 @endforeach
         </div>
+    </x-app-layout>    
     </body>
 </html>
