@@ -12,7 +12,9 @@
         <div class='posts'>
                 @foreach ($posts as $post)
                 <div class='post'>
-                    <h3>{{ $post->title }}</h2>
+                    <h3 class='title'>
+                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                    </h3>
                     <p>{{ $post->user->name }}</p>
                     <p>(楽譜)post->image->image_url</p>
                     <p>{{ $post->instruments }}</p>

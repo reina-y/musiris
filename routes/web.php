@@ -18,4 +18,4 @@ use App\Http\Controllers\PostController;
     // return view('welcome');
 // });
 Route::get('/',[PostController::class, 'index']);
-Route::get('/musiris/{post}',[PostController::class, 'show']);
+Route::get('/posts/{post}',[PostController::class, 'show']);
