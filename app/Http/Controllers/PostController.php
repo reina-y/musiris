@@ -13,6 +13,6 @@ class PostController extends Controller
         //$image_url = Cloudinary::getRealPath()->getSecurePath();
     }
     public function show(Post $post){
-        return view('show')->with(['posts'=> $post->get()]);
+        return view('show')->with(['post'=> $post]);
     }
 }
