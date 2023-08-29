@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <title>Musiris</title>
-        <link rel="stylesheet" href="index.css">
     </head>
     <body>
     <x-app-layout>
@@ -16,10 +15,10 @@
                 @foreach ($posts as $post)
                 <div class='post'>
                     <h3 class='title'>
-                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                        <a href="/post/{{ $post->id }}">{{ $post->title }}</a>
                     </h3>
                     <p>{{ $post->user->name }}</p>
-                    <p>(楽譜)post->image->image_url</p>
+                    <img src="{{ $post->image_url }}" alt="画像が読み込めません。"/>
                     <p>{{ $post->instruments }}</p>
                     <p>{{ $post->body }}</p>
                 </div>
