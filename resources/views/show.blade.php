@@ -13,14 +13,14 @@
             </x-slot>
         <div class="content">
             <div class="content__post">
-                <p>楽譜</p>
+                <img src="{{ $post->image_url }}" alt="画像が読み込めません。"/>
                 <p>{{ $post->instruments }}</p>
                 <p>{{ $post->body }}</p>    
             </div>
         </div>
         <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/">TOPに戻る</a>
         </div>
-    </body>
     </x-app-layout>
+    </body>
 </html>    

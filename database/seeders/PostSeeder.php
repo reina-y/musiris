@@ -20,6 +20,7 @@ class PostSeeder extends Seeder
             DB::table('posts')->insert([
                 'user_id'=> '1',
                 'title' => 'title1',
+                'image_url' => 'sample.png',
                 'instruments' => 'piano,vocal',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
@@ -28,6 +29,7 @@ class PostSeeder extends Seeder
             DB::table('posts')->insert([
                 'user_id'=> '1',
                 'title' => 'title2',
+                'image_url' => 'sample.png',
                 'instruments' => 'trumpetto,piano',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
@@ -36,6 +38,7 @@ class PostSeeder extends Seeder
             DB::table('posts')->insert([
                 'user_id'=> '2',
                 'title' => 'title3',
+                'image_url' => 'sample.png',
                 'instruments' => 'violin,viola,cello',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
@@ -44,6 +47,7 @@ class PostSeeder extends Seeder
             DB::table('posts')->insert([
                 'user_id'=> '4',
                 'title' => 'title4',
+                'image_url' => 'sample.png',
                 'instruments' => 'flute,violin,viola,cello',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
