@@ -11,12 +11,20 @@
             <x-slot name="header">
                 Create Post
             </x-slot>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li class="error" style="color:red">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{route('store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="title">
                 <p>TITLE</p>
                 <input type="text" name="post[title]" value="{{ old('post.title') }}"/>
-                
             </div>
             <div class="image">
                 <br><p>SCORES</p>
