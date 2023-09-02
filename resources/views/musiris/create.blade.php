@@ -24,21 +24,21 @@
             @csrf
             <div class="title">
                 <p>TITLE</p>
-                <input type="text" name="post[title]" value="{{ old('post.title') }}"/>
+                <input type="text" name="post[title]" value="{{ old('post.title') }}">
             </div>
             <div class="image">
                 <br><p>SCORES</p>
-                <input type="file" name="image"/>
+                <input type="file" name="image">
             </div>
             <div class="instruments">
                 <br><p>INSTRUMENTS</p>
-                <input type="text" name="post[instruments]" value="{{ old('post.instruments') }}"/>
+                <input type="text" name="post[instruments]" value="{{ old('post.instruments') }}">
             </div>
             <div class="body">
-                <br><p>COMMENTS</p>
+                <br><p>COMMENT</p>
                 <textarea type="textarea" name="post[body]">{{ old('post.body') }}</textarea>
             </div>
-            <input type="submit" value="POST"/>
+            <input type="submit" value="POST">
         </form>
         <br><a href="/">TOPに戻る</a>
         </x-app-layout>

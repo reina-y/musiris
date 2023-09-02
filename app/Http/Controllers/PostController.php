@@ -12,14 +12,14 @@ use Cloudinary;
 class PostController extends Controller
 {
     public function index(Post $post){
-        return view('index')->with(['posts'=> $post->get()]);
+        return view('musiris.index')->with(['posts'=> $post->get()]);
         $image_url = Cloudinary::getRealPath()->getSecurePath();
     }
     public function show(Post $post){
-        return view('show')->with(['post'=> $post]);
+        return view('musiris.show')->with(['post'=> $post]);
     } 
     public function create(){
-        return view('create');
+        return view('musiris.create');
     }
     public function store(Post $post,PostRequest $request){
         $user_id = Auth::id();
@@ -31,7 +31,25 @@ class PostController extends Controller
     }
     public function user(Post $post,User $user){
         $posts = $post->where('user_id', $user->id);
-        return view('user')->with(['posts'=> $posts->get(),'users'=> $user]);
+        return view('musiris.user')->with(['posts'=> $posts->get(),'users'=> $user]);
         $image_url = Cloudinary::getRealPath()->getSecurePath();
+    }
+    public function edit(Post $post)
+    {
+        return view('musiris.edit')->with(['post'=>$post]);
+    } 
+    public function update(PostRequest $request, Post $post)
+    {
+        $input = $request['post'];
+        //$image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        //$input += ['image_url' => $image_url];
+        $post->fill($input)->save();
+
+        return redirect('/');
+    }
+    public function delete(Post $post)
+    {
+        $post->delete();
+        return redirect('/');
     }
 }
