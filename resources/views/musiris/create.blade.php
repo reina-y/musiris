@@ -9,7 +9,7 @@
     <body>
         <x-app-layout>
             <x-slot name="header">
-                Create Post
+                新規投稿
             </x-slot>
         @if ($errors->any())
             <div class="alert alert-danger">
