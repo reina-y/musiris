@@ -1,8 +1,8 @@
 
 <x-app-layout>
     <x-slot name="header">
-        Scores
-    </x-slot>   
+        投稿一覧
+    </x-slot>
     <div class='posts bg-red'>
             @foreach ($posts as $post)
             <div class='post'>
@@ -22,11 +22,11 @@
                 <div class="likes">
                     <button class="like_Button" data-post-id="{{$post->id}}">いいね</button>
                 </div>
-            @endif    
+            @endif
             <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
             @csrf
             @method('DELETE')
-            <button type="button" onclick="deletePost({{ $post->id }})">削除</button> 
+            <button type="button" onclick="deletePost({{ $post->id }})">削除</button>
             </form>
             @endforeach
     </div>
@@ -39,4 +39,4 @@
         }
     }
     </script>
-</x-app-layout>    
+</x-app-layout>
