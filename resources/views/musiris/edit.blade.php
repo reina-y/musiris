@@ -20,7 +20,7 @@
                         </ul>
                     </div>
                  @endif
-                    <form action="/posts/{{$post->id}}" method="POST">
+                    <form action="/posts/{{$post->id}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <p class="title">TITLE</p>
