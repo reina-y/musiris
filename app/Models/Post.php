@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Like;
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
 
-class Post extends Model
+class Post extends Model implements Searchable
 {
     use HasFactory;
     
@@ -27,4 +29,15 @@ class Post extends Model
     $like=Like::where('user_id', Auth::id())->where('post_id', $post->id)->first();
     return $like;
   }
+  public function getSearchResult(): SearchResult
+    {
+       $url = route('show',$this->id);
+    
+        return new SearchResult(
+           $this,
+           $this->title,
+           $url
+        );
+    }    
+    
 }

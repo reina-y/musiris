@@ -18,6 +18,11 @@
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                         {{ __('投稿一覧') }}
                     </x-nav-link>
+                      <form action="{{ route('search.result') }}" method="GET">
+                        @csrf
+                        <input type="text" name="query">
+                        <input type="submit" value="検索">
+                      </form>
                 </div>
             </div>
 
@@ -40,7 +45,7 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('プロフィール') }}
                         </x-dropdown-link>
-                         <x-dropdown-link :href="route('create')">
+                        <x-dropdown-link :href="route('create')">
                             {{ __('新規投稿') }}
                         </x-dropdown-link>
                         
