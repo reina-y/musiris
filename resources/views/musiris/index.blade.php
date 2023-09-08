@@ -3,7 +3,7 @@
     <x-slot name="header">
         投稿一覧
     </x-slot>
-    <div class='posts bg-red'>
+    <div class='posts'>
             @foreach ($posts as $post)
             <div class='post'>
                 <h3 class='title'>
