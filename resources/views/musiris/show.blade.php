@@ -19,8 +19,10 @@
             </div>
         </div>
         <div class="footer">
+            <a href="/posts/{{ $post->id }}/edit">編集</a>
             <a href="/">TOPに戻る</a>
         </div>
+        
     </x-app-layout>
     </body>
 </html>    
