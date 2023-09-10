@@ -8,23 +8,23 @@ use App\Models\User;
 use App\Models\Like;
 use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Comment;
 use Cloudinary; 
 
 class PostController extends Controller
 {
     public function index(Post $post){
-        $like=Like::where('post_id', $post->id)->where('user_id', auth()->user()->id)->first();
+        $like = Like::where('post_id', $post->id)->where('user_id', auth()->user()->id)->first();
         return view('musiris.index')->with(['posts'=> $post->get()]);
         $image_url = Cloudinary::getRealPath()->getSecurePath();
     }
-    public function show(Post $post){
-        return view('musiris.show')->with(['post'=> $post]);
+    public function show(Post $post,Comment $comment){
+        return view('musiris.show')->with(['post'=> $post,'comments'=> $comment->get()]);
     } 
     public function create(){
         return view('musiris.create');
     }
     public function store(Post $post,PostRequest $request){
-        dd($request);
         $user_id = Auth::id();
         $input = $request['post'];
         $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
