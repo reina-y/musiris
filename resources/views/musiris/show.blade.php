@@ -20,16 +20,17 @@
         </div>
         <div class="footer">
             <a href="/posts/{{ $post->id }}/edit">編集</a>
-                <p>コメント</p>
-            <div class="comments">
+                <div class="comments">
+                <p>コメント一覧</p>
                 @foreach ($comments as $comment)
                 <div class='post'>
                     <p>{{ $comment->body }}</p>
-                    <img src="{{ $comment->movie_url }}">
+                    <video src="{{ $comment->movie_url }}"></video>
                 </div>    
                 @endforeach
             </div>
             <div class="post_Comments">
+                <p>コメントする</p>
                 <form action="/posts/{{ $post->id }}/comments"  method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="body">
