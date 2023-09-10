@@ -18,12 +18,15 @@
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                         {{ __('投稿一覧') }}
                     </x-nav-link>
+                      
+                </div>
+                    <div class="">
                       <form action="{{ route('search.result') }}" method="GET">
                         @csrf
-                        <input type="text" name="query">
+                        <input type="text" name="query" placeholder="　キーワード検索">
                         <input type="submit" value="検索">
                       </form>
-                </div>
+                    </div>
             </div>
 
             <!-- Settings Dropdown -->

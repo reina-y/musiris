@@ -9,13 +9,13 @@
         <body>
             <x-app-layout>
                 <x-slot name="header">
-                    {{$users->name}}
+                    {{ $users->name }}
                  </x-slot>
                     <div class="user_Posts">
                         @foreach($posts as $post)
-                            <p class="title">{{$post->title}}</p>
+                            <a class="title" href="/post/{{ $post->id }}">{{ $post->title }}</a>
                             <img src="{{ $post->image_url }}" alt="画像が読み込めません。"/>
-                            <p class="instruments">{{$post->instruments}}</p>
+                            <p class="instruments">{{ $post->instruments }}</p>
                         @endforeach
                     </div>
             </x-app-layout>   

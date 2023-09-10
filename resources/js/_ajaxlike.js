@@ -1,3 +1,6 @@
+import jQuery from 'jquery';
+window.$ = jQuery;
+
 $(function () {
     console.log('jquery run');
     let like = $('.like-toggle'); //like-toggleのついたiタグを取得し代入。
