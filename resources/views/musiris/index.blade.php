@@ -10,7 +10,7 @@
                 <h3 class='title'>
                     <a href="/post/{{ $post->id }}">{{ $post->title }}</a>
                 </h3>
-                <a href="/user/{{ $post->user->id }}">{{ $post->user->name }}</p>
+                <a href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a>
                 <img src="{{ $post->image_url }}" alt="画像が読み込めません。"/>
                 <p>{{ $post->instruments }}</p>
                 <p>{{ $post->body }}</p>
@@ -29,7 +29,7 @@
                 <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                 @csrf
                 @method('DELETE')
-                    <button type="button" onclick="deletePost({{ $post->id }})">削除</button>
+                <button type="button" onclick="deletePost({{ $post->id }})">削除</button>
                 </form>
                 </div>
             @endforeach
