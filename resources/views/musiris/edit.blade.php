@@ -9,7 +9,7 @@
         <body>
              <x-app-layout>
                  <x-slot name="header">
-                    編集    
+                    投稿編集    
                  </x-slot>
                  @if ($errors->any())
                     <div class="alert alert-danger">
@@ -23,15 +23,15 @@
                     <form action="/posts/{{$post->id}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <p class="title">TITLE</p>
+                        <p class="title">タイトル</p>
                         <input type='text' name='post[title]' value="{{ old('post.title',$post->title) }}">
-                        <br><p class="image">SCORES</p>
-                        <input type='file' name='image'>
-                        <br><p class="instruments">INSTRUMENTS</p>
+                        <br><p class="image">楽譜</p>
+                        <input type='file' name='image[]' multiple>
+                        <br><p class="instruments">楽器編成</p>
                         <input type='text' name='post[instruments]' value="{{ old('post.instruments',$post->instruments) }}">
-                        <br><p>COMMENT</p>
+                        <br><p>本文</p>
                         <textarea type="textarea" name="post[body]">{{ old('post.body',$post->body) }}</textarea>
-                        <br><input type="submit" value="POST">
+                        <br><input type="submit" value="投稿する">
                     </form>
                 <br><a href="/">TOPに戻る</a>
              </x-app-layout>

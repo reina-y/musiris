@@ -13,13 +13,19 @@
             </x-slot>
         <div class="content">
             <div class="content__post">
-                <img src="{{ $post->image_url }}" alt="画像が読み込めません。"/>
+                <div class="images">
+                    @foreach($post->images as $image)
+                     <img src="{{ $image->image_url }}" alt="画像が読み込めません。"/>
+                    @endforeach 
+                </div>
                 <p>{{ $post->instruments }}</p>
                 <p>{{ $post->body }}</p>    
             </div>
         </div>
         <div class="footer">
+            @if($post->user->id == Auth::id())
             <a href="/posts/{{ $post->id }}/edit">編集</a>
+            @endif
                 <div class="comments">
                 <p>コメント一覧</p>
                 @foreach ($comments as $comment)
@@ -34,7 +40,7 @@
                 <form action="/posts/{{ $post->id }}/comments"  method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="body">
-                    <input type="file" name="movie_url">
+                    <input type="file" name="movie_url"><br>
                     <button type="submit">送信</button>
                 </form>
             </div>

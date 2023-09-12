@@ -14,7 +14,11 @@
                     <div class="user_Posts">
                         @foreach($posts as $post)
                             <a class="title" href="/post/{{ $post->id }}">{{ $post->title }}</a>
-                            <img src="{{ $post->image_url }}" alt="画像が読み込めません。"/>
+                            <div class="images">
+                            @foreach($post->images as $image)
+                             <img src="{{ $image->image_url }}" alt="画像が読み込めません。"/>
+                            @endforeach 
+                            </div>
                             <p class="instruments">{{ $post->instruments }}</p>
                         @endforeach
                     </div>

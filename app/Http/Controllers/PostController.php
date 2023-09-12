@@ -9,14 +9,14 @@ use App\Models\Like;
 use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Comment;
-use Cloudinary; 
+use Cloudinary;
+use App\Models\Image;
 
 class PostController extends Controller
 {
     public function index(Post $post){
         $like = Like::where('post_id', $post->id)->where('user_id', auth()->user()->id)->first();
         return view('musiris.index')->with(['posts'=> $post->get()]);
-        $image_url = Cloudinary::getRealPath()->getSecurePath();
     }
     public function show(Post $post,Comment $comment){
         return view('musiris.show')->with(['post'=> $post,'comments'=> $comment->get()]);
@@ -27,15 +27,22 @@ class PostController extends Controller
     public function store(Post $post,PostRequest $request){
         $user_id = Auth::id();
         $input = $request['post'];
-        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
-        $input += ['image_url' => $image_url, 'user_id' => $user_id];
+        $input += ['user_id' => $user_id];
         $post->fill($input)->save();
+        // 画像の保存
+        foreach($request->file('image') as $url)
+        {
+            $image = new Image();
+            $image_url = Cloudinary::upload($url->getRealPath())->getSecurePath();
+            $image->image_url = $image_url;
+            $image->post_id = $post->id;
+            $image->save();
+        }
         return redirect('/');
     }
     public function user(Post $post,User $user){
         $posts = $post->where('user_id', $user->id);
         return view('musiris.user')->with(['posts'=> $posts->get(),'users'=> $user]);
-        $image_url = Cloudinary::getRealPath()->getSecurePath();
     }
     public function edit(Post $post)
     {
@@ -44,9 +51,15 @@ class PostController extends Controller
     public function update(PostRequest $request, Post $post)
     {
         $input = $request['post'];
-        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
-        $input += ['image_url' => $image_url];
         $post->fill($input)->save();
+        foreach($request->file('image') as $url)
+        {
+            $image = new Image();
+            $image_url = Cloudinary::upload($url->getRealPath())->getSecurePath();
+            $image->image_url = $image_url;
+            $image->post_id = $post->id;
+            $image->save();
+        }
 
         return redirect('/');
     }
