@@ -26,30 +26,28 @@ class Post extends Model implements Searchable
         return $this->hasMany(Comment::class);
     }
     
-    public function likes()
-  {
-    return $this->hasMany(Like::class);
-  }
-  
-  public function islike($post)
-  {
-    $like=Like::where('user_id', Auth::id())->where('post_id', $post->id)->first();
-    return $like;
-  }
-  
-  public function getSearchResult(): SearchResult
+    public function getSearchResult(): SearchResult
     {
-       $url = route('show',$this->id);
+      $url = route('show',$this->id);
     
         return new SearchResult(
-           $this,
-           $this->title,
-           $url
+          $this,
+          $this->title,
+          $url
         );
     }
     
     public function images()
     {
         return $this->hasMany(Image::class);
+    }
+    
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+    
+    public function isLikedBy($user): bool {
+        return Like::where('user_id', $user->id)->where('post_id', $this->id)->first() !==null;
     }
 }

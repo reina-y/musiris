@@ -1,6 +1,9 @@
 
 <x-app-layout> 
      <link rel="styleSheet" href="{{ asset('/css/index.css') }}">
+     <meta name="csrf-token" content="{{ csrf_token() }}">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+         
     <x-slot name="header">
         投稿一覧
     </x-slot>
@@ -20,15 +23,19 @@
                 <p>{{ $post->body }}</p>
             
                 <div class="button">
-                    @if($post->islike($post))
-                        <div class="likes">
-                            <button class="like_Button liked" data-post-id="{{ $post->id }}">いいね解除</button>
-                        </div>
+                    @auth
+                    @if (!$post->isLikedBy(Auth::user()))
+                        <span class="likes">
+                            <i class="fas fa-heart like-toggle" data-post-id="{{ $post->id }}"></i>
+                            <span class="like-counter">{{$post->likes_count}}</span>
+                        </span>
                     @else
-                        <div class="likes">
-                            <button class="like_Button" data-post-id="{{ $post->id }}">いいね</button>
-                        </div>
+                        <span class="likes">
+                            <i class="fas fa-heart heart like-toggle liked" data-post-id="{{ $post->id }}"></i>
+                            <span class="like-counter">{{$post->likes_count}}</span>
+                        </span>
                     @endif
+                    @endauth
                     @if($post->user->id == Auth::id())
                         <div class="delete_Button">
                             <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">

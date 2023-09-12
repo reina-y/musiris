@@ -41,34 +41,22 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];　
     
     public function comment()
     {
       return $this->hasMany(Comment::class);
     }
+    
+    public function posts()
+    {
+        return $this->belongsTo(Post::class);
+    }
+    
     public function likes()
     {
-        return $this->belongsToMany('App\Models\Post','likes','user_id','post_id')->withTimestamps();
-    }
-    public function isLike($postId)
-    {
-      return $this->likes()->where('post_id',$postId)->exists();
-    }
-    public function like($postId)
-    {
-      if($this->isLike($postId)){
-      } else {
-        $this->likes()->attach($postId);
-      }
-    }
-     public function unlike($postId)
-    {
-      if($this->isLike($postId)){
-        $this->likes()->detach($postId);
-      } else {
-      }
+        return $this->hasMany(Like::class);
     }
 }

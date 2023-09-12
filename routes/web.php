@@ -33,8 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/post/{post}',[PostController::class,'show'])->name('show');
     Route::put('/posts/{post}', [PostController::class, 'update']);
     Route::post('/posts',[PostController::class,'store'])->name('store'); 
-    Route::post('/posts/like',[PostController::class,'like']);
-    Route::post('/posts/unlike/{post}',[PostController::class,'unlike']);
+    Route::post('/posts/like', [PostController::class, 'like'])->name('like');
     Route::delete('/posts/{post}', [PostController::class,'delete']);
     
     Route::get('/search/result', [SearchController::class,'result'])->name('search.result');
