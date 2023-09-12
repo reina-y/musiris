@@ -23,22 +23,22 @@
         <form action="{{route('store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="title">
-                <p>TITLE</p>
+                <p>タイトル</p>
                 <input type="text" name="post[title]" value="{{ old('post.title') }}">
             </div>
             <div class="image">
-                <br><p>SCORES</p>
-                <input type="file" name="image">
+                <br><p>楽譜</p>
+                <input type="file" name="image[]" multiple>
             </div>
             <div class="instruments">
-                <br><p>INSTRUMENTS</p>
+                <br><p>楽器編成</p>
                 <input type="text" name="post[instruments]" value="{{ old('post.instruments') }}">
             </div>
             <div class="body">
-                <br><p>COMMENT</p>
+                <br><p>本文</p>
                 <textarea type="textarea" name="post[body]">{{ old('post.body') }}</textarea>
             </div>
-            <input type="submit" value="POST">
+            <input type="submit" value="投稿する">
         </form>
         <br><a href="/">TOPに戻る</a>
         </x-app-layout>
