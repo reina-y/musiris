@@ -15,8 +15,9 @@ use App\Models\Image;
 class PostController extends Controller
 {
     public function index(Post $post){
-        $like = Like::where('post_id', $post->id)->where('user_id', auth()->user()->id)->first();
-        return view('musiris.index')->with(['posts'=> $post->get()]);
+        $user = auth()->user();
+        $posts = Post::withCount('likes')->orderByDesc('updated_at')->get();
+        return view('musiris.index')->with(['posts' => $posts,]);
     }
     public function show(Post $post,Comment $comment){
         return view('musiris.show')->with(['post'=> $post,'comments'=> $comment->get()]);

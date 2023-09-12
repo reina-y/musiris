@@ -2,14 +2,12 @@ import jQuery from 'jquery';
 window.$ = jQuery;
 
 $(function () {
-    console.log('jquery run');
     let like = $('.like-toggle'); //like-toggleのついたiタグを取得し代入。
     let likePostId; //変数を宣言
     like.on('click', function () { //onはイベントハンドラー
     
       let $this = $(this); //this=イベントの発火した要素＝iタグを代入
       likePostId = $this.data('post-id'); //iタグに仕込んだdata-post-idの値を取得
-      console.log(likePostId);
       //ajax処理スタート
       $.ajax({
         headers: { //HTTPヘッダ情報をヘッダ名と値のマップで記述
@@ -32,7 +30,7 @@ $(function () {
         console.log('fail'); 
       });
     });
-})
+});
 
 
 
