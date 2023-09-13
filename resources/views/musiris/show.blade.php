@@ -28,10 +28,11 @@
             @endif
                 <div class="comments">
                 <p>コメント一覧</p>
-                @foreach ($comments as $comment)
+                @foreach ($post->comment as $comments)
                 <div class='post'>
-                    <p>{{ $comment->body }}</p>
-                    <video src="{{ $comment->movie_url }}"></video>
+                    <p>{{ $comments->user->name }}</p>
+                    <p>{{ $comments->body }}</p>
+                    <video src="{{ $comments->movie_url }}"></video>
                 </div>    
                 @endforeach
             </div>

@@ -17,19 +17,20 @@ class CommentController extends Controller
     }
     public function store(Post $post,Comment $comment,Request $request)
    {
+        $movie_url = null;
         $movie = $request->file('movie_url');
         
         if ($movie) {
             $uploadedmovie = Cloudinary::upload($movie->getRealPath(), [
                 'resource_type' => 'video',
             ]);
-            $movieUrl = $uploadedmovie->getSecurePath();
+            $movie_url = $uploadedmovie->getSecurePath();
         }
 
        $comment->post_id = $post->id;
        $comment->user_id = Auth::user()->id;
        $comment->body = $request['body'];
-       $comment->movie_url = $movieUrl;
+       $comment->movie_url = $movie_url;
        $comment->save();
 
        return redirect('/post/'. $post->id);
