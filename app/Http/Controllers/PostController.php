@@ -16,8 +16,8 @@ class PostController extends Controller
 {
     public function index(Post $post){
         $user = auth()->user();
-        $posts = Post::withCount('likes')->orderByDesc('updated_at')->get();
-        return view('musiris.index')->with(['posts' => $posts,]);
+        $posts = Post::withCount('likes')->orderByDesc('updated_at')->paginate(3);
+        return view('musiris.index',compact('posts'));
     }
     public function show(Post $post,Comment $comment){
         return view('musiris.show')->with(['post'=> $post,'comments'=> $comment->get()]);
@@ -42,8 +42,8 @@ class PostController extends Controller
         return redirect('/');
     }
     public function user(Post $post,User $user){
-        $posts = $post->where('user_id', $user->id);
-        return view('musiris.user')->with(['posts'=> $posts->get(),'users'=> $user]);
+        $posts = $post->where('user_id', $user->id)->paginate(3);
+        return view('musiris.user',compact('posts'))->with(['users'=> $user]);
     }
     public function edit(Post $post)
     {

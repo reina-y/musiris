@@ -4,7 +4,6 @@
          <link rel="styleSheet" href="{{ asset('/css/index.css') }}">
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-         
         <x-slot name="header">
             投稿一覧
         </x-slot>
@@ -19,7 +18,7 @@
                     <div class="swiper-wrapper">
                     @foreach($post->images as $image)
                     <div class="swiper-slide">
-                     <img src="{{ $image->image_url }}" alt="画像が読み込めません。"/>
+                        <img src="{{ $image->image_url }}" alt="画像が読み込めません。"/>
                     </div> 
                     @endforeach
                     </div>
@@ -56,6 +55,9 @@
                 </div>
             </div>
             @endforeach
+            <div class="paginate">
+                {{ $posts->links() }}
+            </div>
         </div>
     <script>
     function deletePost(id){
