@@ -67,7 +67,7 @@
                     <p>【演奏動画を添付する】</p>
                     <input type="file" name="movie_url" value="演奏動画">
                     <br>
-                    <input type="text" name="body" placeholder='コメントする'>
+                    <textarea type="textarea" name="body" placeholder="コメントする"></textarea>
                     <button class='submit_btn' type="submit">
                         <i class="fas fa-paper-plane purple-color"></i>
                     </button>
