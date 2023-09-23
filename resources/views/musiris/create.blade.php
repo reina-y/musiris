@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <title>Musiris</title>
-    </head>
-    <body>
+<title>Musiris</title>
         <x-app-layout>
+            <link rel="styleSheet" href="{{ asset('/css/create.css') }}">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
             <x-slot name="header">
                 新規投稿
             </x-slot>
+        <div class="body">    
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -27,20 +22,26 @@
                 <input type="text" name="post[title]" value="{{ old('post.title') }}">
             </div>
             <div class="image">
-                <br><p>楽譜</p>
+                <br>
+                <p>楽譜</p>
                 <input type="file" name="image[]" multiple>
             </div>
             <div class="instruments">
                 <br><p>楽器編成</p>
                 <input type="text" name="post[instruments]" value="{{ old('post.instruments') }}">
             </div>
-            <div class="body">
+            <div class="post_body">
                 <br><p>本文</p>
                 <textarea type="textarea" name="post[body]">{{ old('post.body') }}</textarea>
             </div>
-            <input type="submit" value="投稿する">
+            <div class="sbm_btn">
+                <button type="submit">投稿する</button>
+                <i class="fas fa-paper-plane purple-color"></i>
+            </div>
         </form>
-        <br><a href="/">TOPに戻る</a>
+        </div>
+        <br>
+        <a class="back_index" href="/">投稿一覧に戻る</a>
         </x-app-layout>
     </body>        
 </html>            

@@ -21,7 +21,7 @@ class Post extends Model implements Searchable
         return $this->belongsTo(User::class);
     }
     
-    public function comment()
+    public function comments()
     {
         return $this->hasMany(Comment::class);
     }

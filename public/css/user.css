@@ -1,6 +1,8 @@
+.userName{
+    font-family: serif;
+}
 .post{
     border-bottom: 1px dotted;
-    border-color: gray;
 }
 .title{
     color: black;
@@ -11,27 +13,11 @@
 .title:hover{
     color: #6737ae;
 }
-.userName{
-    color: gray;
-    font-family: serif;
+img{
     margin-left: 100px;
-}
-.userName:hover{
-    color: #5a19a9;
-    text-decoration: underline;
 }
 .instruments{
     font-size: 20px;
     font-family: serif;
     margin-left: 100px;
-}
-.button{
-    margin-left: 1100px ;
-}
-.liked {
-    color: rgb(225, 58, 86);
-}
-
-.like-toggle {
-    cursor: pointer;
 }

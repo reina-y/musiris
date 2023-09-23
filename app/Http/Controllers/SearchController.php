@@ -14,7 +14,6 @@ class SearchController extends Controller
         $searchResults = (new Search())
                     ->registerModel(Post::class, ['title','instruments','body'])
                     ->perform($request->input('query'));
-             //dd($searchResults);
         return view('search.result', compact('searchResults'))->with(['post'=>$post]);
     }
 }

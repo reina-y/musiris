@@ -53,6 +53,12 @@ class PostController extends Controller
     {
         $input = $request['post'];
         $post->fill($input)->save();
+        $already_images = Image::where('post_id', $post->id)->get();
+        // dd($already_images);
+        foreach($already_images as $image)
+        {
+            $image->delete();
+        }
         foreach($request->file('image') as $url)
         {
             $image = new Image();
@@ -66,6 +72,7 @@ class PostController extends Controller
     }
     public function delete(Post $post)
     {
+        dd($post);
         $post->delete();
         
         return redirect('/');
