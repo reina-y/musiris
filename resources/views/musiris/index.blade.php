@@ -28,7 +28,7 @@
                     <div class="swiper-scrollbar"></div>
                 </div>
                 <p class="instruments">{{ $post->instruments }}</p>
-                <p>{{ $post->body }}</p>
+                <p class="body">{{ $post->body }}</p>
                 <div class="button">
                     @auth
                     @if (!$post->isLikedBy(Auth::user()))

@@ -25,6 +25,10 @@
     font-family: serif;
     margin-left: 100px;
 }
+.body{
+    margin-left: 100px;
+    font-family: serif;
+}
 .button{
     margin-left: 1100px ;
 }
@@ -34,4 +38,13 @@
 
 .like-toggle {
     cursor: pointer;
+}
+.swiper{
+  width: auto;
+  height: auto;
+}
+.swiper img{
+  max-width: 100%;
+  height: 100%;
+  margin: auto;
 }
