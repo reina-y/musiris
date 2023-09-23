@@ -1,33 +1,34 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                    <a href="{{ route('index') }}">
+                       <h1>Musiris</h1>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                         {{ __('投稿一覧') }}
                     </x-nav-link>
-                      
                 </div>
-                    <div class="">
+                    
+            </div>
+                    
                       <form action="{{ route('search.result') }}" method="GET">
                         @csrf
-                        <input type="text" name="query" placeholder="　キーワード検索">
-                        <input type="submit" value="検索">
+                        <div class="mt-4">
+                        <input type="text" name="query" placeholder="キーワード検索">
+                            <button type="submit">
+                                <i class="fas fa-search" style="color: #6737ae;"></i>
+                            </button>
+                        </div>    
                       </form>
-                    </div>
-            </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">

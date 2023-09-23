@@ -1,0 +1,20 @@
+.body{
+    margin-left: 100px;
+}
+.sbm_btn{
+    color: #6737ae;
+    margin-left: 150px;
+}
+.sbm_btn:hover{
+    color: #5a19a9;
+}
+.purple-color{
+    color: #6737ae;
+}
+.back_index{
+    color: gray;
+}
+.back_index:hover{
+    color: black;
+    text-decoration: underline;
+}

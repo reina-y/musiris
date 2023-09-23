@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <title>Musiris</title>
-    </head>
-        <body>
+<title>Musiris</title>
              <x-app-layout>
+                 <link rel="styleSheet" href="{{ asset('/css/edit.css') }}">
+                 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
                  <x-slot name="header">
                     投稿編集    
                  </x-slot>
+                 <div class="body">
                  @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -31,9 +26,16 @@
                         <input type='text' name='post[instruments]' value="{{ old('post.instruments',$post->instruments) }}">
                         <br><p>本文</p>
                         <textarea type="textarea" name="post[body]">{{ old('post.body',$post->body) }}</textarea>
-                        <br><input type="submit" value="投稿する">
+                        <div class="sbm_btn">
+                            <br>
+                            <button type="submit">投稿する</button>
+                            <i class="fas fa-paper-plane purple-color"></i>
+                        </div>
                     </form>
-                <br><a href="/">TOPに戻る</a>
-             </x-app-layout>
-        </body>
-</html>
+                </div>
+                <div class="back_index">
+                    <br>
+                    <a href="/">投稿一覧に戻る</a>
+                </div>
+        </x-app-layout>
+ 

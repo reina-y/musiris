@@ -1,27 +1,22 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <title>Musiris</title>
-    </head>
-        <body>
+<title>Musiris</title>
             <x-app-layout>
+                <link rel="styleSheet" href="{{ asset('/css/user.css') }}">
                 <x-slot name="header">
-                    {{ $users->name }}
+                    <div class="userName">
+                        {{ $users->name }}
+                    </div>
                  </x-slot>
-                    <div class="user_Posts">
+                    <div class="posts">
                         @foreach($posts as $post)
+                        <div class="post">
                             <a class="title" href="/post/{{ $post->id }}">{{ $post->title }}</a>
                             <div class="images">
                             @foreach($post->images as $image)
-                             <img src="{{ $image->image_url }}" alt="画像が読み込めません。"/>
+                             <img width="900" height="1600" src="{{ $image->image_url }}" alt="画像が読み込めません。"/>
                             @endforeach 
                             </div>
                             <p class="instruments">{{ $post->instruments }}</p>
+                        </div>    
                         @endforeach
                     </div>
-            </x-app-layout>   
-        </body>
-</html>
+            </x-app-layout>

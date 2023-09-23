@@ -1,0 +1,83 @@
+.content{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.title{
+    font-size: 30px;
+    font-family: sans-serif;
+}
+.edit{
+    margin-left: 900px;
+    font-size: 15px;
+    color: gray;
+}
+.edit:hover{
+    color: black;
+}
+.userName{
+    color: gray;
+    font-family: serif;
+    margin-left: 100px;
+}
+.userName:hover{
+    color: #5a19a9;
+    text-decoration: underline;
+}
+.swiper{
+  width: auto;
+  height: auto;
+}
+.swiper img{
+  max-width: 100%;
+  height: auto;
+}
+.instruments{
+    font-size: 20px;
+    font-family: serif;
+}
+.button{
+    margin-left: 1000px ;
+}
+.liked {
+    color: rgb(225, 58, 86);
+}
+
+.like-toggle {
+    cursor: pointer;
+}
+.comments{
+    border-top: 1px solid;
+}
+.comment{
+    border-bottom: 1px dotted;
+}
+.cmt{
+    font-size: 30px;
+    font-family: serif;
+    margin-left: 100px;
+}
+.post_Comments{
+    color: gray;
+    margin-left: 100px;
+}
+.cmt_body{
+    margin-left: 10px;
+    margin-left: 100px;
+}
+video{
+    margin-left: 100px;
+}
+.purple-color{
+    color: #6737ae;
+    margin-left: 10px;
+}
+.purple-color:hover{
+    color: #5a19a9;
+}
+.back_index{
+    color: gray;
+}
+.back_index:hover{
+    color: black;
+    text-decoration: underline;
+}
