@@ -2,9 +2,6 @@
         <x-app-layout>
             <link rel="styleSheet" href="{{ asset('/css/create.css') }}">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-            <x-slot name="header">
-                新規投稿
-            </x-slot>
         <div class="body">    
         @if ($errors->any())
             <div class="alert alert-danger">

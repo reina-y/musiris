@@ -4,9 +4,6 @@
          <link rel="styleSheet" href="{{ asset('/css/index.css') }}">
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-        <x-slot name="header">
-            投稿一覧
-        </x-slot>
         <div class='posts'>
             @foreach ($posts as $post)
             <div class='post'>
