@@ -28,7 +28,7 @@
                         <div class="mt-4">
                         <input type="text" name="query" placeholder="キーワード検索">
                             <button type="submit">
-                                <i class="fas fa-search" style="color: #6737ae;"></i>
+                                <i class="fas fa-search" style="color: #0066CC"></i>
                             </button>
                         </div>    
                       </form>
