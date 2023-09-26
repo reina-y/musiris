@@ -9,9 +9,9 @@
     color: rgb(35, 85, 165);
 }
 .back_index{
-    color: gray;
+    color: rgb(0, 102, 204);
 }
 .back_index:hover{
-    color: black;
+    color: gray;
     text-decoration: underline;
 }
