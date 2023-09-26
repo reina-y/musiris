@@ -73,12 +73,12 @@
 video{
     margin-left: 350px;
 }
-.purple-color{
-    color: #6737ae;
+.blue-color{
+    color: rgb(0, 102, 204);
     margin-left: 10px;
 }
-.purple-color:hover{
-    color: #5a19a9;
+.blue-color:hover{
+    color: rgb(35, 85, 165);
 }
 .back_index{
     color: gray;

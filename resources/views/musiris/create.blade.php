@@ -33,7 +33,7 @@
             </div>
             <div class="sbm_btn">
                 <button type="submit">投稿する</button>
-                <i class="fas fa-paper-plane purple-color"></i>
+                <i class="fas fa-paper-plane blue-color"></i>
             </div>
         </form>
         </div>

@@ -69,7 +69,7 @@
                     <br>
                     <textarea type="textarea" name="body" placeholder="コメントする"></textarea>
                     <button class='submit_btn' type="submit">
-                        <i class="fas fa-paper-plane purple-color"></i>
+                        <i class="fas fa-paper-plane blue-color"></i>
                     </button>
                 </form>
             </div>

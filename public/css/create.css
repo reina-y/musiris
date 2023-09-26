@@ -2,17 +2,14 @@
     margin-left: 100px;
 }
 .sbm_btn{
-    color: #6737ae;
+    color: rgb(0, 102, 204);
     margin-left: 150px;
 }
 .sbm_btn:hover{
-    color: #5a19a9;
-}
-.purple-color{
-    color: #6737ae;
+    color: rgb(35, 85, 165);
 }
 .back_index{
-    color: gray;
+    color: rgb(35, 85, 165);
 }
 .back_index:hover{
     color: black;
