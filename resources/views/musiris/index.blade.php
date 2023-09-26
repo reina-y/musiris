@@ -7,10 +7,12 @@
         <div class='posts'>
             @foreach ($posts as $post)
             <div class='post'>
-                <h3 class='title'>
-                    <a href="/post/{{ $post->id }}">{{ $post->title }}</a>
-                </h3>
-                <a class="userName" href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a>
+                <div class="header">
+                    <a class="userName" href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a>
+                    <h3 class='title'>
+                        <a href="/post/{{ $post->id }}">{{ $post->title }}</a>
+                    </h3>
+                </div>
                 <div class="swiper">
                     <div class="swiper-wrapper">
                     @foreach($post->images as $image)
