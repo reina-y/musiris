@@ -20,7 +20,7 @@
     margin-left: 100px;
 }
 .userName:hover{
-    color: #5a19a9;
+    color: rgb(0, 102, 204);
     text-decoration: underline;
 }
 .swiper{
