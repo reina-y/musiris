@@ -16,6 +16,9 @@
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                         {{ __('投稿一覧') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
+                        {{ __('新規投稿') }}
+                    </x-nav-link>
                 </div>
                     
             </div>
@@ -25,7 +28,7 @@
                         <div class="mt-4">
                         <input type="text" name="query" placeholder="キーワード検索">
                             <button type="submit">
-                                <i class="fas fa-search" style="color: #6737ae;"></i>
+                                <i class="fas fa-search" style="color: #0066CC"></i>
                             </button>
                         </div>    
                       </form>
@@ -48,9 +51,6 @@
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('プロフィール') }}
-                        </x-dropdown-link>
-                        <x-dropdown-link :href="route('create')">
-                            {{ __('新規投稿') }}
                         </x-dropdown-link>
                         
 

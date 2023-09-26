@@ -51,7 +51,7 @@
                 <p class="cmt">コメント一覧</p>
                 @foreach ($post->comments as $comment)
                 <div class='comment'>
-                    <a class='userName' href='/user/{{ $post->user->id }}'>{{ $comment->user->name }}</a>
+                    <a class='cmt_user-Name' href='/user/{{ $post->user->id }}'>{{ $comment->user->name }}</a>
                     <p class="cmt_body">{{ $comment->body }}</p>
                     @if($comment->movie_url !== null)
                     <video width='320' hight='180' controls preload="metadata" src="{{ $comment->movie_url }}"></video>
@@ -69,7 +69,7 @@
                     <br>
                     <textarea type="textarea" name="body" placeholder="コメントする"></textarea>
                     <button class='submit_btn' type="submit">
-                        <i class="fas fa-paper-plane purple-color"></i>
+                        <i class="fas fa-paper-plane blue-color"></i>
                     </button>
                 </form>
             </div>

@@ -8,15 +8,15 @@
     color: black;
     font-size: 30px;
     font-family: sans-serif;
-    margin-left: 100px;
+    margin-left: 350px;
 }
 .title:hover{
-    color: #6737ae;
+    color: rgb(0, 102, 204);
 }
 .instruments{
     font-size: 20px;
     font-family: serif;
-    margin-left: 100px;
+    margin-left: 350px;
 }
 .swiper{
   width: auto;

@@ -4,16 +4,15 @@
          <link rel="styleSheet" href="{{ asset('/css/index.css') }}">
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-        <x-slot name="header">
-            投稿一覧
-        </x-slot>
         <div class='posts'>
             @foreach ($posts as $post)
             <div class='post'>
-                <h3 class='title'>
-                    <a href="/post/{{ $post->id }}">{{ $post->title }}</a>
-                </h3>
-                <a class="userName" href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a>
+                <div class="header">
+                    <a class="userName" href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a>
+                    <h3 class='title'>
+                        <a href="/post/{{ $post->id }}">{{ $post->title }}</a>
+                    </h3>
+                </div>
                 <div class="swiper">
                     <div class="swiper-wrapper">
                     @foreach($post->images as $image)
