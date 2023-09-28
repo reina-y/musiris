@@ -20,7 +20,7 @@ pass:12345678
   - EC2
 - Cloudinary
 - Swiper
-- FontAwsome
+- Font Awesome
 
 # ER図
 <img width="438" alt="スクリーンショット 2023-09-28 134947" src="https://github.com/reina-y/musiris/assets/136882380/e5679276-99d7-4605-ab1f-5ea69bff2175">
