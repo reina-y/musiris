@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikedIndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/user/{user}',[PostController::class,'user']);
+    Route::get('/user/{user}/liked',[LikedIndexController::class,'liked']);
     Route::get('/posts/create',[PostController::class,'create'])->name('create');
     Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('edit');
     Route::get('/',[PostController::class,'index'])->name('index');
@@ -37,7 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/posts/{post}', [PostController::class,'delete']);
     
     Route::get('/search/result', [SearchController::class,'result'])->name('search.result');
-    
+   
     Route::post('/posts/{post}/comments',[CommentController::class,'store']);
     
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
