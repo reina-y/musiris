@@ -14,13 +14,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
-                        {{ __('投稿一覧') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
-                        {{ __('新規投稿') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('likedIndex', auth()->user()->id)" :active="request()->routeIs('likedIndex')">
-                        {{ __('いいね一覧') }}
+                        {{ __('　ホーム　') }}
                     </x-nav-link>
                 </div>
                     
@@ -54,6 +48,12 @@
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('プロフィール') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('create')">
+                            {{ __('新規投稿') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('likedIndex', auth()->user()->id)">
+                            {{ __('いいね一覧') }}
                         </x-dropdown-link>
                         
 
