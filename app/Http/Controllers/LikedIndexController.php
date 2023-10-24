@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class LikedIndexController extends Controller
 {
     public function liked(){
-        $likedPosts = Auth::user()->likes()->with('post')->get();
+        $likedPosts = Auth::user()->likes()->with('post')->paginate(3);
         return view('musiris.likedIndex',compact('likedPosts'));
     }
 }
