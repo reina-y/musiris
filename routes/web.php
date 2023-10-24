@@ -28,7 +28,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/user/{user}',[PostController::class,'user']);
-    Route::get('/user/{user}/liked',[LikedIndexController::class,'liked']);
+    Route::get('/user/{user}/liked',[LikedIndexController::class,'likedIndex'])->name("likedIndex");
     Route::get('/posts/create',[PostController::class,'create'])->name('create');
     Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('edit');
     Route::get('/',[PostController::class,'index'])->name('index');

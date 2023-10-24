@@ -19,6 +19,9 @@
                     <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
                         {{ __('新規投稿') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('likedIndex', auth()->user()->id)" :active="request()->routeIs('likedIndex')">
+                        {{ __('いいね一覧') }}
+                    </x-nav-link>
                 </div>
                     
             </div>
