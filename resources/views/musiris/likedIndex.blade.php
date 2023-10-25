@@ -5,12 +5,12 @@
         <x-slot name=header>
         <h1>いいね一覧</h1>
         </x-slot>
-        @if($likedPosts ==! null)
+        @if(count(Auth::user()->likes) === 0)
             <div class="nothing">
                 <p class="likedYet">まだいいねしていません</p>
                 <p>お気に入りの曲をいいねしましょう！</p>
             </div>
-        @endif    
+        @else
         <div class="posts">
             @foreach($likedPosts as $like)
             <div class='post'>
@@ -37,6 +37,7 @@
         <div class="paginate">
             {{ $likedPosts->links() }}
         </div>
+        @endif
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
             <script>
                 const swiper = new Swiper('.swiper', {
