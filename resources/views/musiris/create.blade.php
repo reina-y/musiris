@@ -41,7 +41,7 @@
         </form>
         </div>
         <br>
-        <a class="back_index" href="/">投稿一覧に戻る</a>
+        <a class="back_index" href="/">ホームに戻る</a>
         </x-app-layout>
     </body>        
 </html>            

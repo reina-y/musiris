@@ -74,7 +74,7 @@
                 </form>
             </div>
             <div class="back_index">
-                <a href="/">投稿一覧に戻る</a>
+                <a href="/">ホームに戻る</a>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
