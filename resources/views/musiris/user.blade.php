@@ -4,7 +4,7 @@
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
                 <x-slot name="header">
                     <div class="userName">
-                        {{ $users->name }}
+                        <p>"{{ $users->name }}"の投稿</p>
                     </div>
                  </x-slot>
                     <div class="posts">
