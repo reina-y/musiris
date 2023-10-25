@@ -2,6 +2,13 @@
     border-bottom: 1px dotted;
     border-color: gray;
 }
+.nothing{
+    margin-top: 50px;
+    margin-left: 550;
+}
+.likedYet{
+    padding-left: 35px
+}
 .title{
     color: black;
     font-size: 30px;

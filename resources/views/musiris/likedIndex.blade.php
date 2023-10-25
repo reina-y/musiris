@@ -1,7 +1,16 @@
 <title>Musiris</title>
     <x-app-layout>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-        <link rel="styleSheet" href="{{ asset('/css/likedIndex.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="styleSheet" href="{{ asset('/css/likedIndex.css') }}">
+        <x-slot name=header>
+        <h1>いいね一覧</h1>
+        </x-slot>
+        @if($likedPosts ==! null)
+            <div class="nothing">
+                <p class="likedYet">まだいいねしていません</p>
+                <p>お気に入りの曲をいいねしましょう！</p>
+            </div>
+        @endif    
         <div class="posts">
             @foreach($likedPosts as $like)
             <div class='post'>
