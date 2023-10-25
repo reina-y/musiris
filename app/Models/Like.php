@@ -18,6 +18,6 @@ class Like extends Model
   
   public function post()
   {
-    return $this->belongsTo(post::class);
+    return $this->belongsTo(Post::class);
   }
 }

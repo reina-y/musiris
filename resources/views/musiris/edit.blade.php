@@ -35,7 +35,7 @@
                 </div>
                 <div class="back_index">
                     <br>
-                    <a href="/">投稿一覧に戻る</a>
+                    <a href="/">ホームに戻る</a>
                 </div>
         </x-app-layout>
  

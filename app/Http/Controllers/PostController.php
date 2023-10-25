@@ -97,4 +97,5 @@ class PostController extends Controller
         ];
         return response()->json($param); // JSONデータをjQueryに返す
     }
+    
 }
